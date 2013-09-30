@@ -18,8 +18,8 @@ public class Health {
 		return new Health(setHealth);
 	}
 	
-	public static boolean isDestroyed(Health health) {
-		return (health.getHealth() <= 0) ? true : false;		//TODO: this method is implementation specific to the int model of health
+	public boolean isDestroyed() {
+		return (this.getHealth() <= 0) ? true : false;		//TODO: this method is implementation specific to the int model of health
 	}
 	
 	public void reduceHealth (int value) {

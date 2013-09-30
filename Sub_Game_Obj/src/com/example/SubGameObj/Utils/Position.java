@@ -20,6 +20,15 @@ public class Position {
 		return false;
 	}
 	
+	public Position moveToward (Position dest, int speed) {
+		Position result = null;
+		double slope = (dest.getY() - this.getY()) / (dest.getX() - this.getX());
+		int newX = (int) this.getX();
+		int newY = (int) this.getY();
+		result = new Position (newX, newY);
+		return result;
+	}
+	
 	public double distanceToPos(Position otherPos) {
 		return (this.equals(otherPos)) ? 0.0 : Math.sqrt(((this.getX() - otherPos.getX()) * (this.getX() - otherPos.getX())) + ((this.getY() - otherPos.getY()) * (this.getY() - otherPos.getY())));
 	}
