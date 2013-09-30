@@ -13,6 +13,7 @@ public class Explosion extends Event <Health>{
 	
 	public Explosion(Position pos) {
 		super(pos);
+		new Sound(pos);
 	}
 
 	/**
@@ -25,6 +26,4 @@ public class Explosion extends Event <Health>{
 	public Health eventAction(Ship ship) {
 		return ship.receiveDamage(10);	//TODO: the '10' is currently arbitrary, make it a variable
 	}
-	
-	//TODO: This class needs to create a Sound event when created...
 }

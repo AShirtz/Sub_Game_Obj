@@ -9,11 +9,16 @@ public class DepthCharge extends Weapon {
 	private int timeToDetonation;
 	
 	public DepthCharge (Position pos, int timeToDetonation) {
+		super();
 		this.setPosition(pos);
 		this.timeToDetonation = timeToDetonation;
 	}
 	
 	public Event onTurn () {
-		return (--this.timeToDetonation <= 0) ? new Explosion(this.getPosition()) : null;
+		if (--this.timeToDetonation == 0) {
+			this.listener.removeWeapon(this);
+			return new Explosion(this.getPosition());
+		}
+		return null;
 	}
 }

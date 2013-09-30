@@ -12,6 +12,7 @@ public class SonarPing extends Event <Position> {
 
 	public SonarPing(Position pos) {
 		super(pos);
+		new Sound(pos);
 	}
 
 	/**
@@ -24,7 +25,4 @@ public class SonarPing extends Event <Position> {
 	public Position eventAction(Ship ship) {
 		return ship.getPosition();
 	}
-	
-	//TODO: This class needs to create a Sound event at it's location. Figure out how to do that...
-
 }

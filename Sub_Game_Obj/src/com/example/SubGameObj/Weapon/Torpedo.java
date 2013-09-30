@@ -9,6 +9,7 @@ public class Torpedo extends Weapon {
 	private Position destination = null;
 	
 	public Torpedo (Position pos, Position dest) {
+		super();
 		this.setPosition(pos);
 		this.destination = dest;
 	}

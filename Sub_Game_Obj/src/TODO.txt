@@ -1,11 +1,16 @@
 Each line of this file links to a TODO scattered throughout the project
-
-	SonarPing.java - 28
-	//TODO: This class needs to create a Sound event at it's location. Figure out how to do that...
-	
-	Explosion.java - 29
-	//TODO: This class needs to create a Sound event when created...
-	
 	
 	Health.java - 22
 	//TODO: this method is implementation specific to the int model of health
+	
+	GameMap.java - 80
+	//TODO: this will draw the map and then call the Player Character to draw
+	
+	Explosion.java - 27
+	//TODO: the '10' is currently arbitrary, make it a variable
+	
+	EnemyShip.java - 17
+	//TODO: this is for simple testing purposes, the second int is the timer.
+	
+	Ship.java - 23
+	//TODO: Just for testing, will be abstract
