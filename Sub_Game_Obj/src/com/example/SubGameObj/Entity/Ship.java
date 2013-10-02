@@ -22,10 +22,10 @@ public abstract class Ship {
 	
 	public void onTurn () {
 		System.out.print("Ship: " + this.toString() + " onTurn.\n");	//TODO: Just for testing, will be abstract
-		if (!this.mPosition.equals(mDestination)) {
+		/*if (!this.mPosition.equals(mDestination)) {
 			this.setPosition(mPosition.moveToward(mDestination, 10));	//TODO: the '10' is the speed at which the ship will move
 			System.out.print("Position: " + this.getPosition().getX() + ", " + this.getPosition().getY() + "\n");
-		}
+		}*/
 	}
 	
 	/**

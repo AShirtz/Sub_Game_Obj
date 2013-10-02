@@ -37,7 +37,7 @@ public class GameMap implements ObjectListener {
 		return instance;
 	}
 	
-	protected GameMap () {
+	private GameMap () {
 		this.mActiveShips = new HashSet<Ship>();
 		this.mCurrentEvents = new HashSet<Event>();
 		this.mWeaponsActive = new HashSet<Weapon>();
