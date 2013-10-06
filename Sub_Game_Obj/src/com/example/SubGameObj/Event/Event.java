@@ -31,12 +31,14 @@ public abstract class Event <T>{
 	}
 	
 	/**
-	 * 
 	 * @param Ship - The ship responding to the Event.
-	 * @return Determined by subclass.
 	 * @author anshirtz
 	 */
-	public abstract T eventAction (Ship ship);
+	public void eventAction (Ship ship) {
+		if (this.radius < this.getPosition().distanceToPos(ship.getPosition())) {
+			return;		//This return statement is to stop the event from acting upon ships outside it's radius
+		}
+	}
 
 	public int getRadius() {
 		return radius;

@@ -13,10 +13,10 @@ public class Sound extends Event<Position> {
 	public Sound(Position pos) {
 		super(pos);
 	}
-
+	
 	@Override
-	public Position eventAction(Ship ship) {
-		return this.getPosition();
+	public void eventAction (Ship ship) {
+		super.eventAction(ship);
+		ship.notifyOfPosition(this.getPosition());
 	}
-
 }

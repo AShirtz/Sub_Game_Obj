@@ -21,11 +21,16 @@ public class Position {
 	}
 	
 	public Position moveToward (Position dest, int speed) {
+		if (this.equals(dest)) {
+			return this;
+		}
 		Position result = null;
-		double slope = (dest.getY() - this.getY()) / (dest.getX() - this.getX());
-		int newX = (int) this.getX();
-		int newY = (int) this.getY();
-		result = new Position (newX, newY);
+		double ratio = (speed / this.distanceToPos(dest));
+		int deltaX = (dest.getX() - this.getX());
+		int deltaY = (dest.getY() - this.getY());
+		int newX = (int) Math.ceil(ratio * deltaX);
+		int newY = (int) Math.ceil(ratio * deltaY);
+		result = new Position ((this.getX() + newX), (this.getY() + newY));
 		return result;
 	}
 	

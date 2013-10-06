@@ -49,15 +49,24 @@ public class GameMap implements ObjectListener {
 		this.drawMap();
 		this.weaponOnTurn();
 		this.shipOnTurn();
+		this.eventActions();
 		this.purgeSets();
 	}
-	
+
 	private void purgeSets() {
 		this.mCurrentEvents.removeAll(mCurrentEvents);
 		this.mActiveShips.removeAll(shipsToRemove);
 		this.mWeaponsActive.removeAll(weaponsToRemove);
 		this.shipsToRemove.removeAll(shipsToRemove);
 		this.weaponsToRemove.removeAll(weaponsToRemove);
+	}
+	
+	private void eventActions() {
+		for (Event event : this.mCurrentEvents) {
+			for (Ship ship : this.mActiveShips) {
+				event.eventAction(ship);
+			}
+		}
 	}
 
 	private void weaponOnTurn() {
@@ -68,9 +77,6 @@ public class GameMap implements ObjectListener {
 	
 	private void shipOnTurn() {
 		for (Ship ship : this.mActiveShips) {
-			for (Event event : this.mCurrentEvents) {
-				ship.respondToEvent(event);
-			}
 			ship.onTurn();
 		}
 	}

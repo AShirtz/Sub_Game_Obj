@@ -21,11 +21,20 @@ public abstract class Ship {
 	}
 	
 	public void onTurn () {
-		System.out.print("Ship: " + this.toString() + " onTurn.\n");	//TODO: Just for testing, will be abstract
-		/*if (!this.mPosition.equals(mDestination)) {
-			this.setPosition(mPosition.moveToward(mDestination, 10));	//TODO: the '10' is the speed at which the ship will move
+		System.out.print("Ship: " + this.toString() + " onTurn.\n");	//TODO: Just for testing, may be abstract
+		if (this.mDestination != null && !this.mPosition.equals(mDestination)) {
+			this.setPosition(mPosition.moveToward(mDestination, 30));	//TODO: the '30' is the speed at which the ship will move
 			System.out.print("Position: " + this.getPosition().getX() + ", " + this.getPosition().getY() + "\n");
-		}*/
+		}
+	}
+	
+	
+	/**
+	 * This method is a hook for the AI to know of a specific position on the map.
+	 * @param pos
+	 */
+	public void notifyOfPosition (Position pos) {
+		
 	}
 	
 	/**
@@ -33,13 +42,6 @@ public abstract class Ship {
 	 * @param event
 	 * @return Object (Position if SonarPing, Health if Explosion) or null if distance is greater than the events radius
 	 */
-	public Object respondToEvent(Event event) {
-		if (this.getPosition().distanceToPos(event.getPosition()) < event.getRadius()) {
-			System.out.print("Ship: " + this.toString() + " responding to Event: " + event.toString() + "\n");
-			return event.eventAction(this);
-		}
-		return null;
-	}
 	
 	public Health receiveDamage (int damage) {
 		this.getmHealth().reduceHealth(damage);

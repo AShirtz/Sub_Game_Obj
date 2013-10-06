@@ -9,6 +9,8 @@ import com.example.SubGameObj.Utils.Position;
  *
  */
 public class SonarPing extends Event <Position> {
+	
+	private Ship shipWhoCreatedPing = null;
 
 	public SonarPing(Position pos) {
 		super(pos);
@@ -18,11 +20,11 @@ public class SonarPing extends Event <Position> {
 	/**
 	 * This method will return the position of the ship that is responding to this event.
 	 * @param Ship - the ship that is responding to the event.
-	 * @return Position - the position of the Ship specified by the {@code ship} param.
 	 * @author anshirtz
 	 */
 	@Override
-	public Position eventAction(Ship ship) {
-		return ship.getPosition();
+	public void eventAction (Ship ship) {
+		super.eventAction(ship);
+		shipWhoCreatedPing.notifyOfPosition(ship.getPosition());		
 	}
 }

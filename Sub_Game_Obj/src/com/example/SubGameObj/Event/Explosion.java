@@ -11,19 +11,21 @@ import com.example.SubGameObj.Utils.Position;
  */
 public class Explosion extends Event <Health>{
 	
+	private int damage = 10;
+	
 	public Explosion(Position pos) {
 		super(pos);
 		new Sound(pos);
 	}
-
+	
 	/**
 	 * Returns the Health of the ship responding to this event.
 	 * @param Ship - The ship responding to this event.
-	 * @return Integer - The health of the ship.
 	 * @author anshirtz
 	 */
 	@Override
-	public Health eventAction(Ship ship) {
-		return ship.receiveDamage(10);	//TODO: the '10' is currently arbitrary, make it a variable
+	public void eventAction (Ship ship) {
+		super.eventAction(ship);
+		ship.receiveDamage(this.damage);
 	}
 }
