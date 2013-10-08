@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Random;
 
 import com.example.SubGameObj.Entity.EnemyShip;
+import com.example.SubGameObj.Entity.PlayerControlledSubmarine;
 import com.example.SubGameObj.Utils.Position;
 
 public class GameController {
@@ -16,7 +17,7 @@ public class GameController {
 		return gameMap;
 	}
 	public void setpointer(GamePointer gamepointer){
-		if (pointer.getSelected() == Submarine() ) {
+		if (pointer.getSelected() == PlayerControlledSubmarine.getInstance()) {
 			//TODO: enter movement commands
 		} 
 		else {
@@ -44,6 +45,6 @@ public class GameController {
 	}
 	
 	public void createEnemyShip(int xPos, int yPos) {
-		EnemyShip result = new EnemyShip(xPos, yPos);
+		new EnemyShip(xPos, yPos);
 	}
 }
