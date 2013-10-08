@@ -10,10 +10,19 @@ import com.example.SubGameObj.Utils.Position;
 public class GameController {
 
 	private GameMap gameMap = null;
+	private GamePointer pointer = null;
 	
 	public GameMap getGameMap() {
 		return gameMap;
 	}
+	public void setpointer(GamePointer gamepointer){
+		if (pointer.getSelected() == Submarine() ) {
+			//TODO: enter movement commands
+		} 
+		else {
+			pointer = gamepointer;
+		} 
+	} 
 
 	public void setGameMap(GameMap gameMap) {
 		this.gameMap = gameMap;
