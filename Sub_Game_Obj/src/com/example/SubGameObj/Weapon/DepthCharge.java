@@ -1,6 +1,5 @@
 package com.example.SubGameObj.Weapon;
 
-import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Event.Explosion;
 import com.example.SubGameObj.Utils.Position;
 
@@ -14,11 +13,11 @@ public class DepthCharge extends Weapon {
 		this.timeToDetonation = timeToDetonation;
 	}
 	
-	public Event onTurn () {
+	@Override
+	public void onTurn () {
 		if (--this.timeToDetonation == 0) {
 			this.listener.removeWeapon(this);
-			return new Explosion(this.getPosition());
+			new Explosion(this.getPosition());
 		}
-		return null;
 	}
 }

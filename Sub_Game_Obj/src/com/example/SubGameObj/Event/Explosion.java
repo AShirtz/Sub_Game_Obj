@@ -9,7 +9,7 @@ import com.example.SubGameObj.Utils.Position;
  * @author anshirtz
  *
  */
-public class Explosion extends Event <Health>{
+public class Explosion extends Event {
 	
 	private int damage = 10;
 	

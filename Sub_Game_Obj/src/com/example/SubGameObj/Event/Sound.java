@@ -8,7 +8,7 @@ import com.example.SubGameObj.Utils.Position;
  * @author anshirtz
  *
  */
-public class Sound extends Event<Position> {
+public class Sound extends Event {
 
 	public Sound(Position pos) {
 		super(pos);

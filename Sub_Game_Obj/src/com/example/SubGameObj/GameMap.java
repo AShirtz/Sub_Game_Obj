@@ -7,6 +7,7 @@ import java.util.Set;
 import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Utils.ObjectListener;
+import com.example.SubGameObj.Utils.PlayerController;
 import com.example.SubGameObj.Weapon.Weapon;
 
 
@@ -46,10 +47,10 @@ public class GameMap implements ObjectListener {
 	}
 	
 	protected void onTurn () {
-		this.drawMap();
 		this.weaponOnTurn();
 		this.shipOnTurn();
 		this.eventActions();
+		this.drawObjects();
 		this.purgeSets();
 	}
 
@@ -81,7 +82,7 @@ public class GameMap implements ObjectListener {
 		}
 	}
 	
-	private void drawMap() {}	//TODO: this will draw the map and then call the Player Character to draw
+	private void drawObjects() {}	//TODO: this will draw the map and then call the Player Character to draw
 	
 	/*
 	 *********************

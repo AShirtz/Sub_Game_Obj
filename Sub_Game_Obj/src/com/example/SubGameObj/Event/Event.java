@@ -6,7 +6,7 @@ import com.example.SubGameObj.Utils.ObjectListener;
 import com.example.SubGameObj.Utils.Position;
 
 
-public abstract class Event <T>{
+public abstract class Event {
 
 	private static final int defaultRadius = 50;
 	

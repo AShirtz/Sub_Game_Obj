@@ -8,7 +8,7 @@ import com.example.SubGameObj.Utils.Position;
  * @author anshirtz
  *
  */
-public class SonarPing extends Event <Position> {
+public class SonarPing extends Event {
 	
 	private Ship shipWhoCreatedPing = null;
 

@@ -1,6 +1,5 @@
 package com.example.SubGameObj.Weapon;
 
-import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Event.Explosion;
 import com.example.SubGameObj.Utils.Position;
 
@@ -15,8 +14,11 @@ public class Torpedo extends Weapon {
 	}
 
 	@Override
-	public Event onTurn() {
-		return (this.getPosition().equals(this.destination)) ? new Explosion(this.getPosition()) : null;
+	public void onTurn() {
+		this.setPosition(this.getPosition().moveToward(destination, 30));
+		if (this.getPosition().equals(destination)) {
+			new Explosion(this.getPosition());
+		}
 	}
 	
 }

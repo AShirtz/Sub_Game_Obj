@@ -1,7 +1,6 @@
 package com.example.SubGameObj.Weapon;
 
 import com.example.SubGameObj.GameMap;
-import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Utils.ObjectListener;
 import com.example.SubGameObj.Utils.Position;
 
@@ -23,5 +22,5 @@ public abstract class Weapon {
 		this.mPosition = mPosition;
 	}
 	
-	public abstract Event onTurn ();
+	public abstract void onTurn ();
 }
