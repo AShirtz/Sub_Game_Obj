@@ -25,11 +25,16 @@ public class Position {
 			return this;
 		}
 		Position result = null;
-		double ratio = (speed / this.distanceToPos(dest));
+		double ratio;
+		if (speed < this.distanceToPos(dest)) {
+			ratio = (speed / this.distanceToPos(dest));
+		} else {
+			ratio = 1.0;
+		}
 		int deltaX = (dest.getX() - this.getX());
 		int deltaY = (dest.getY() - this.getY());
-		int newX = (int) Math.ceil(ratio * deltaX);
-		int newY = (int) Math.ceil(ratio * deltaY);
+		int newX = (int) Math.round(ratio * deltaX);
+		int newY = (int) Math.round(ratio * deltaY);
 		result = new Position ((this.getX() + newX), (this.getY() + newY));
 		return result;
 	}
