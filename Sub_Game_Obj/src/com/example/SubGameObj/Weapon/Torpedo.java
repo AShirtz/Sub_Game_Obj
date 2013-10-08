@@ -20,5 +20,10 @@ public class Torpedo extends Weapon {
 			new Explosion(this.getPosition());
 		}
 	}
+
+	@Override
+	public void onDraw() {
+		
+	}
 	
 }

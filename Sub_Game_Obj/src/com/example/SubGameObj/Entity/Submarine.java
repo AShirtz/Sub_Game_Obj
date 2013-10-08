@@ -10,11 +10,17 @@ public class Submarine extends Ship {
 	
 	public Submarine(int xPos, int yPos) {
 		super(xPos, yPos);
-		this.setmHealth(Health.fullHealth(submarineDefaultHealth));
+		this.setHealth(Health.fullHealth(submarineDefaultHealth));
 	}
 	
 	public void fireTorpedo (Position destination) {
 		new Torpedo(this.getPosition(), destination);
+	}
+
+	@Override
+	public void onDraw() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

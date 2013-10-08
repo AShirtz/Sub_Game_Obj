@@ -2,11 +2,12 @@ package com.example.SubGameObj.Event;
 
 import com.example.SubGameObj.GameMap;
 import com.example.SubGameObj.Entity.Ship;
+import com.example.SubGameObj.Utils.ObjectController;
 import com.example.SubGameObj.Utils.ObjectListener;
 import com.example.SubGameObj.Utils.Position;
 
 
-public abstract class Event {
+public abstract class Event implements ObjectController {
 
 	private static final int defaultRadius = 50;
 	

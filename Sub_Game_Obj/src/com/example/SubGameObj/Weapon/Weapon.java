@@ -1,10 +1,11 @@
 package com.example.SubGameObj.Weapon;
 
 import com.example.SubGameObj.GameMap;
+import com.example.SubGameObj.Utils.ObjectController;
 import com.example.SubGameObj.Utils.ObjectListener;
 import com.example.SubGameObj.Utils.Position;
 
-public abstract class Weapon {
+public abstract class Weapon implements ObjectController {
 
 	private Position mPosition = null;
 	protected ObjectListener listener = null;

@@ -82,7 +82,17 @@ public class GameMap implements ObjectListener {
 		}
 	}
 	
-	private void drawObjects() {}	//TODO: this will draw the map and then call the Player Character to draw
+	private void drawObjects() {
+		for (Ship ship : this.getmActiveShips()) {
+			ship.onDraw();
+		}
+		for (Weapon weapon : this.getmWeaponsActive()) {
+			weapon.onDraw();
+		}
+		for (Event event : this.getmCurrentEvents()) {
+			event.onDraw();
+		}
+	}
 	
 	/*
 	 *********************

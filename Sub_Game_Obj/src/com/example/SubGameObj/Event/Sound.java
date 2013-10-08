@@ -19,4 +19,10 @@ public class Sound extends Event {
 		super.eventAction(ship);
 		ship.notifyOfPosition(this.getPosition());
 	}
+
+	@Override
+	public void onDraw() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -28,4 +28,10 @@ public class Explosion extends Event {
 		super.eventAction(ship);
 		ship.receiveDamage(this.damage);
 	}
+
+	@Override
+	public void onDraw() {
+		// TODO Auto-generated method stub
+		
+	}
 }

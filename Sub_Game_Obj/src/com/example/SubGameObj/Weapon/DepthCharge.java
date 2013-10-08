@@ -20,4 +20,9 @@ public class DepthCharge extends Weapon {
 			new Explosion(this.getPosition());
 		}
 	}
+
+	@Override
+	public void onDraw() {
+		
+	}
 }

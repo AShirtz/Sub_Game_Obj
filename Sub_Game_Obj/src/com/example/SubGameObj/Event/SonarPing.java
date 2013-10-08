@@ -27,4 +27,10 @@ public class SonarPing extends Event {
 		super.eventAction(ship);
 		shipWhoCreatedPing.notifyOfPosition(ship.getPosition());		
 	}
+
+	@Override
+	public void onDraw() {
+		// TODO Auto-generated method stub
+		
+	}
 }

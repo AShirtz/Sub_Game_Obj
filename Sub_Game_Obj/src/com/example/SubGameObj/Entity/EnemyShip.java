@@ -10,10 +10,16 @@ public class EnemyShip extends Ship {
 
 	public EnemyShip(int xPos, int yPos) {
 		super(xPos, yPos);
-		this.setmHealth(Health.fullHealth(enemyShipDefaultHealth));
+		this.setHealth(Health.fullHealth(enemyShipDefaultHealth));
 	}
 	
 	public Weapon fireWeapon() {
 		return new DepthCharge(this.getPosition(), 10); 		//TODO: this is for simple testing purposes, the second int is the timer.
+	}
+
+	@Override
+	public void onDraw() {
+		// TODO Auto-generated method stub
+		
 	}
 }

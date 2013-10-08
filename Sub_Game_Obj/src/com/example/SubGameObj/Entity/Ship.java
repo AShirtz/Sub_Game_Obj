@@ -5,8 +5,9 @@ import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Utils.Health;
 import com.example.SubGameObj.Utils.ObjectListener;
 import com.example.SubGameObj.Utils.Position;
+import com.example.SubGameObj.Utils.ShipController;
 
-public abstract class Ship {
+public abstract class Ship implements ShipController {
 
 	private Position mPosition = null;
 	private Health mHealth = null;
@@ -33,9 +34,7 @@ public abstract class Ship {
 	 * This method is a hook for the AI to know of a specific position on the map.
 	 * @param pos
 	 */
-	public void notifyOfPosition (Position pos) {
-		
-	}
+	public void notifyOfPosition (Position pos) {}
 	
 	/**
 	 * Determines whether or not the ship should react to the event, as determined by the distance between the event and the ship.
@@ -43,40 +42,39 @@ public abstract class Ship {
 	 * @return Object (Position if SonarPing, Health if Explosion) or null if distance is greater than the events radius
 	 */
 	
-	public Health receiveDamage (int damage) {
-		this.getmHealth().reduceHealth(damage);
+	public void receiveDamage (int damage) {
+		this.getHealth().reduceHealth(damage);
 		if (this.isDestroyed()) {
 			this.listener.removeShip(this);
-			System.out.print("Removing Ship: " + this.toString() + "\n");
 		}
-		return this.getmHealth();
 	}
 	
 	public boolean isDestroyed() {
-		return this.getmHealth().isDestroyed();
+		return this.getHealth().isDestroyed();
 	}
 
+	@Override
+	public void setDestination(Position destination) {
+		this.mDestination = destination;
+	}
+
+	@Override
+	public void setHealth(Health health) {
+		this.mHealth = health;
+	}
+
+	@Override
+	public Health getHealth() {
+		return this.mHealth;
+	}
+
+	@Override
+	public void setPosition(Position pos) {
+		this.mPosition = pos;
+	}
+
+	@Override
 	public Position getPosition() {
-		return mPosition;
-	}
-
-	public void setPosition(Position mPosition) {
-		this.mPosition = mPosition;
-	}
-	
-	public Health getmHealth() {
-		return mHealth;
-	}
-
-	public void setmHealth(Health mHealth) {
-		this.mHealth = mHealth;
-	}
-
-	public Position getDestination() {
-		return mDestination;
-	}
-
-	public void setDestination(Position mDestination) {
-		this.mDestination = mDestination;
+		return this.mPosition;
 	}
 }
