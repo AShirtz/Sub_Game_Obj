@@ -6,7 +6,7 @@ import java.util.Random;
 
 import com.example.SubGameObj.Entity.EnemyShip;
 import com.example.SubGameObj.Entity.PlayerControlledSubmarine;
-import com.example.SubGameObj.Utils.Position;
+import com.example.SubGameObj.Entity.Submarine;
 
 public class GameController {
 
@@ -35,6 +35,16 @@ public class GameController {
 	
 	public void onTurn() {
 		this.gameMap.onTurn();
+	}
+	
+	public void createPlayerSub () {
+		Random rand = new Random(new Date().getTime());
+		int xPos = rand.nextInt(gameMap.xSize);
+		int yPos = rand.nextInt(gameMap.ySize);
+	}
+	
+	public void createPlayerSub (int x, int y) {
+		new Submarine(x, y);
 	}
 	
 	public void createEnemyShip() {

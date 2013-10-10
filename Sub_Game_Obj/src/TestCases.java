@@ -4,17 +4,17 @@ import com.example.SubGameObj.GameController;
 import com.example.SubGameObj.Entity.EnemyShip;
 import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Utils.Position;
+import com.example.SubGameObj.Entity.Submarine;
 
 public class TestCases {
 
 	
 	public static void main(String... args) {
 		GameController controller = new GameController();
-		controller.createEnemyShip(500,500);
-		//controller.createEnemyShip(500,500);
+		controller.createPlayerSub(500,500);
 		Set <Ship> ships = controller.getGameMap().getmActiveShips();
 		for (Ship ship : ships) {
-			ship.setDestination(new Position(500, 100));
+			((Submarine)ship).fireTorpedo(new Position(500, 100));
 		}
 		for (int i = 0; i <= 50; i++) {
 			controller.onTurn();

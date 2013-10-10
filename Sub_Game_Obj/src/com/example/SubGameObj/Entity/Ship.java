@@ -24,7 +24,7 @@ public abstract class Ship implements ShipController {
 	public void onTurn () {
 		System.out.print("Ship: " + this.toString() + " onTurn.\n");	//TODO: Just for testing, may be abstract
 		if (this.mDestination != null && !this.mPosition.equals(mDestination)) {
-			this.setPosition(mPosition.moveToward(mDestination, 30));	//TODO: the '30' is the speed at which the ship will move
+			this.getPosition().moveToward(this.mDestination, 30);	//TODO: the '30' is the speed at which the ship will move
 			System.out.print("Position: " + this.getPosition().getX() + ", " + this.getPosition().getY() + "\n");
 		}
 	}

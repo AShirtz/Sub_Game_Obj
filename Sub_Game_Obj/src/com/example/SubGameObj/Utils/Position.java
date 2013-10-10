@@ -1,6 +1,6 @@
 package com.example.SubGameObj.Utils;
 
-public class Position {
+public class Position implements Cloneable {
 
 	private int posX;
 	private int posY;
@@ -8,6 +8,16 @@ public class Position {
 	public Position (int x, int y) {
 		this.setX(x);
 		this.setY(y);
+	}
+	
+	public Position clone () {
+		Position result = null;
+		try {
+			result =  (Position) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 	@Override
@@ -20,23 +30,21 @@ public class Position {
 		return false;
 	}
 	
-	public Position moveToward (Position dest, int speed) {
-		if (this.equals(dest)) {
-			return this;
+	public void moveToward (Position dest, int speed) {
+		if (!this.equals(dest)) {
+			double ratio;
+			if (speed < this.distanceToPos(dest)) {
+				ratio = (speed / this.distanceToPos(dest));
+			} else {
+				ratio = 1.0;
+			}
+			int deltaX = (dest.getX() - this.getX());
+			int deltaY = (dest.getY() - this.getY());
+			int newX = (int) Math.round(ratio * deltaX);
+			int newY = (int) Math.round(ratio * deltaY);
+			this.setX(this.getX() + newX);
+			this.setY(this.getY() + newY);
 		}
-		Position result = null;
-		double ratio;
-		if (speed < this.distanceToPos(dest)) {
-			ratio = (speed / this.distanceToPos(dest));
-		} else {
-			ratio = 1.0;
-		}
-		int deltaX = (dest.getX() - this.getX());
-		int deltaY = (dest.getY() - this.getY());
-		int newX = (int) Math.round(ratio * deltaX);
-		int newY = (int) Math.round(ratio * deltaY);
-		result = new Position ((this.getX() + newX), (this.getY() + newY));
-		return result;
 	}
 	
 	public double distanceToPos(Position otherPos) {

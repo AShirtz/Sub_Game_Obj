@@ -14,7 +14,7 @@ public class Submarine extends Ship {
 	}
 	
 	public void fireTorpedo (Position destination) {
-		new Torpedo(this.getPosition(), destination);
+		new Torpedo(this.getPosition().clone(), destination);
 	}
 
 	@Override

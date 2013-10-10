@@ -5,7 +5,7 @@ package com.example.SubGameObj.Utils;
  * @author anshirtz
  *
  */
-public class Health {
+public class Health implements Cloneable {
 
 	private int health;
 	private static final int defaultHealth = 20;
@@ -16,6 +16,16 @@ public class Health {
 	
 	public static Health fullHealth(int setHealth) {
 		return new Health(setHealth);
+	}
+	
+	public Health clone () {
+		Health result = null;
+		try {
+			result =  (Health) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 	public boolean isDestroyed() {

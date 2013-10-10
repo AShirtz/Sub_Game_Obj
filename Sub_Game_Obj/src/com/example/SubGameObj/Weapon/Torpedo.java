@@ -1,6 +1,5 @@
 package com.example.SubGameObj.Weapon;
 
-import com.example.SubGameObj.Event.Explosion;
 import com.example.SubGameObj.Utils.Position;
 
 public class Torpedo extends Weapon {
@@ -15,9 +14,9 @@ public class Torpedo extends Weapon {
 
 	@Override
 	public void onTurn() {
-		this.setPosition(this.getPosition().moveToward(destination, 30));
+		this.getPosition().moveToward(destination, 30);		//TODO: the '30' is speed, just for testing
 		if (this.getPosition().equals(destination)) {
-			new Explosion(this.getPosition());
+			this.detonate();
 		}
 	}
 
