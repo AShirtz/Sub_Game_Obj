@@ -27,7 +27,7 @@ public abstract class Weapon implements ObjectController {
 	public abstract void onTurn ();
 	
 	public void detonate () {
-		new Explosion(this.getPosition().clone());
+		new Explosion(this.getPosition());
 		this.listener.removeWeapon(this);
 	}
 }

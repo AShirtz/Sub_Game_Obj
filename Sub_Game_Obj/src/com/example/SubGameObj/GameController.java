@@ -9,13 +9,27 @@ import com.example.SubGameObj.Entity.PlayerControlledSubmarine;
 import com.example.SubGameObj.Entity.Submarine;
 
 public class GameController {
-
+	
+	private static GameController instance = null;
+	
 	private GameMap gameMap = null;
 	private GamePointer pointer = null;
+	
+	public static GameController getInstance () {
+		if (instance == null) {
+			instance = new GameController();
+		}
+		return instance;
+	}
+
+	private GameController () {
+		this.gameMap = GameMap.getInstance();
+	}
 	
 	public GameMap getGameMap() {
 		return gameMap;
 	}
+	
 	public void setpointer(GamePointer gamepointer){
 		if (pointer.getSelected() == PlayerControlledSubmarine.getInstance()) {
 			//TODO: enter movement commands
@@ -29,21 +43,18 @@ public class GameController {
 		this.gameMap = gameMap;
 	}
 
-	public GameController() {
-		gameMap = GameMap.getInstance();
-	}
-	
 	public void onTurn() {
 		this.gameMap.onTurn();
 	}
 	
-	public void createPlayerSub () {
+	public void createSubmarine () {
 		Random rand = new Random(new Date().getTime());
 		int xPos = rand.nextInt(gameMap.xSize);
 		int yPos = rand.nextInt(gameMap.ySize);
+		createSubmarine(xPos, yPos);
 	}
 	
-	public void createPlayerSub (int x, int y) {
+	public void createSubmarine (int x, int y) {
 		new Submarine(x, y);
 	}
 	
@@ -56,5 +67,10 @@ public class GameController {
 	
 	public void createEnemyShip(int xPos, int yPos) {
 		new EnemyShip(xPos, yPos);
+	}
+	
+	public static void destroyGame () {
+		instance = null;
+		GameMap.destroyGame();
 	}
 }

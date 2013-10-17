@@ -26,8 +26,8 @@ public class GameMap implements ObjectListener {
 	private Set <Ship> shipsToRemove = null;
 	private Set <Weapon> weaponsToRemove = null;
 	
-	protected int xSize = 1000;
-	protected int ySize = 1000;
+	public static final int xSize = 1000;
+	public static final int ySize = 1000;
 	
 	public static GameMap instance = null;
 	
@@ -36,6 +36,10 @@ public class GameMap implements ObjectListener {
 			instance = new GameMap();
 		}
 		return instance;
+	}
+	
+	protected static void destroyGame () {
+		instance = null;
 	}
 	
 	private GameMap () {

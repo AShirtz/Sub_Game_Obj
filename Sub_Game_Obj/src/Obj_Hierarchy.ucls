@@ -1,293 +1,339 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="com.example.SubGameObj.GameController" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/GameController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="787" y="100"/>    
+  <class id="1" language="java" name="com.example.SubGameObj.Weapon.Torpedo" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Weapon/Torpedo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="161" x="41" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.example.SubGameObj.GameMap" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/GameMap.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="537" y="332"/>    
+  <class id="2" language="java" name="com.example.SubGameObj.Weapon.DepthCharge" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Weapon/DepthCharge.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="161" x="242" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.example.SubGameObj.Entity.Submarine" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Entity/Submarine.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="96" y="421"/>    
+  <class id="3" language="java" name="com.example.SubGameObj.Weapon.Weapon" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Weapon/Weapon.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="161" x="424" y="233"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.example.SubGameObj.Entity.EnemyShip" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Entity/EnemyShip.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="72" y="545"/>    
+  <class id="4" language="java" name="com.example.SubGameObj.Event.Sound" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Event/Sound.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="152" x="677" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.example.SubGameObj.Entity.Ship" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Entity/Ship.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="305" y="434"/>    
+  <class id="5" language="java" name="com.example.SubGameObj.Event.SonarPing" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Event/SonarPing.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="152" x="869" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="com.example.SubGameObj.Utils.Position" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Utils/Position.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="624" y="550"/>    
+  <class id="6" language="java" name="com.example.SubGameObj.Event.Explosion" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Event/Explosion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="152" x="485" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <interface id="7" language="java" name="com.example.SubGameObj.Utils.ObjectListener" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Utils/ObjectListener.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="601" y="145"/>    
+  <class id="7" language="java" name="com.example.SubGameObj.Event.Event" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Event/Event.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="152" x="644" y="233"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
-  </interface>  
+  </class>  
   <class id="8" language="java" name="com.example.SubGameObj.Utils.Health" project="Sub_Game_Obj" 
     file="/Sub_Game_Obj/src/com/example/SubGameObj/Utils/Health.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="317" y="584"/>    
+    <position height="53" width="146" x="1081" y="512"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.example.SubGameObj.Weapon.Torpedo" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Weapon/Torpedo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="170" y="45"/>    
+  <class id="9" language="java" name="com.example.SubGameObj.Utils.Position" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Utils/Position.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="146" x="445" y="512"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.example.SubGameObj.Weapon.DepthCharge" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Weapon/DepthCharge.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="359" y="86"/>    
+  <class id="10" language="java" name="com.example.SubGameObj.Entity.Submarine" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Entity/Submarine.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="152" x="697" y="512"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="com.example.SubGameObj.Weapon.Weapon" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Weapon/Weapon.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="167" y="224"/>    
+  <class id="11" language="java" name="com.example.SubGameObj.Entity.PlayerControlledSubmarine" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Entity/PlayerControlledSubmarine.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="53" width="180" x="697" y="605"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="com.example.SubGameObj.Event.Sound" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Event/Sound.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="819" y="208"/>    
+  <class id="12" language="java" name="com.example.SubGameObj.Entity.EnemyShip" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Entity/EnemyShip.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="152" x="889" y="512"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="com.example.SubGameObj.Event.SonarPing" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Event/SonarPing.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="825" y="422"/>    
+  <class id="13" language="java" name="com.example.SubGameObj.Entity.Ship" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/Entity/Ship.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="152" x="930" y="419"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="com.example.SubGameObj.Event.Explosion" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Event/Explosion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="965" y="314"/>    
+  <class id="14" language="java" name="com.example.SubGameObj.GameController" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/GameController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="124" x="1103" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="com.example.SubGameObj.Event.Event" project="Sub_Game_Obj" 
-    file="/Sub_Game_Obj/src/com/example/SubGameObj/Event/Event.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="773" y="315"/>    
+  <class id="15" language="java" name="com.example.SubGameObj.GamePointer" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/GamePointer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="124" x="1103" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <association id="16">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="17" name="gameMap"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="19">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="20" name="destination"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="22">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="23" name="mPosition"/>      
-      <multiplicity id="24" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="25">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <association id="26">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="27" name="mHealth"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <association id="30">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="31" name="weaponsToRemove"/>      
-      <multiplicity id="32" minimum="0" maximum="2147483647"/>    
+  <class id="16" language="java" name="com.example.SubGameObj.GameMap" project="Sub_Game_Obj" 
+    file="/Sub_Game_Obj/src/com/example/SubGameObj/GameMap.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="124" x="948" y="130"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <association id="17">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="18" name="instance"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="33">    
+  <association id="20">    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="34" name="listener"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
+      <attribute id="21" name="Selected"/>      
+      <multiplicity id="22" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="36">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="37">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="38" name="instance"/>      
-      <multiplicity id="39" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="40">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="41" name="listener"/>      
-      <multiplicity id="42" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="43">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="44" name="mWeaponsActive"/>      
-      <multiplicity id="45" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="47" name="shipsToRemove"/>      
-      <multiplicity id="48" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="49">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="50" name="listener"/>      
-      <multiplicity id="51" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="52">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="53" name="mActiveShips"/>      
-      <multiplicity id="54" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="55">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="56" name="mPosition"/>      
-      <multiplicity id="57" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="58">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="59">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="60">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="61">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="62" name="mPosition"/>      
-      <multiplicity id="63" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="64">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <association id="65">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="66" name="mCurrentEvents"/>      
-      <multiplicity id="67" minimum="0" maximum="2147483647"/>    
+  <association id="23">    
+    <bendpoint x="1112" y="130"/>    
+    <bendpoint x="1112" y="233"/>    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="24" name="pointer"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="68">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="15"/>  
+  <association id="26">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="27" name="shipWhoCreatedPing"/>      
+      <multiplicity id="28" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="29">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
   </generalization>  
+  <association id="30">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="31" name="mDestination"/>      
+      <multiplicity id="32" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="35">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="36" name="weaponsToRemove"/>      
+      <multiplicity id="37" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <association id="39">    
+    <bendpoint x="454" y="326"/>    
+    <bendpoint x="454" y="419"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="40" name="mPosition"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="43">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="44">    
+    <bendpoint x="433" y="326"/>    
+    <bendpoint x="433" y="419"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="45" name="mPosition"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="48" name="instance"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="51" name="mWeaponsActive"/>      
+      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <generalization id="54">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="55">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="56" name="mCurrentEvents"/>      
+      <multiplicity id="57" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="58">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="59" name="mPosition"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="61">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="62" name="gameMap"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="65" name="mHealth"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <bendpoint x="1072" y="233"/>    
+    <bendpoint x="1072" y="326"/>    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="68" name="shipsToRemove"/>      
+      <multiplicity id="69" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <bendpoint x="1051" y="233"/>    
+    <bendpoint x="1051" y="326"/>    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="71" name="mActiveShips"/>      
+      <multiplicity id="72" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <bendpoint x="252" y="419"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="74" name="destination"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <bendpoint x="1112" y="419"/>    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="77" name="mPosition"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
