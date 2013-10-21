@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.concurrent.Callable;
 
 import com.example.SubGameObj.GameController;
+import com.example.SubGameObj.Entity.EnemyShip;
 import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Entity.Submarine;
 import com.example.SubGameObj.Utils.Position;
@@ -15,7 +16,9 @@ public class TestCases {
 	public static void main(String... args) {
 		try {
 			new TestCases.TestCase.shipMoveTest(100, 100).runTest();
-			new TestCases.TestCase.subTorpedoTest(100, 2).runTest();
+			new TestCases.TestCase.subTorpedoTest(100, 100).runTest();
+			new TestCases.TestCase.EnemyShipDepthChargeTest(100, 100).runTest();
+			new TestCases.TestCase.MixedTest(10000, 10000).runTest();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -65,7 +68,7 @@ public class TestCases {
 				}
 				for (Map.Entry<Ship, Position> entry : results.entrySet()) {
 					if (!entry.getKey().getPosition().equals(entry.getValue())) {
-						controller = null;
+						GameController.destroyGame();
 						return false;
 					}
 				}
@@ -98,15 +101,70 @@ public class TestCases {
 				GameController.destroyGame();
 				return true;
 			}
+		}
+		
+		protected static class EnemyShipDepthChargeTest extends TestCase {		//This test is dependent on the fact that two depth charges will destroy an EnemyShip, if that changes, the test will fail
 			
+			public EnemyShipDepthChargeTest(int maxNumOfTurns, int numOfShips) {
+				super(maxNumOfTurns, numOfShips);
+				this.name = "shipDestroyTest";
+			}
+
+			@Override
+			public Boolean call() throws Exception {
+				GameController controller = GameController.getInstance();
+				for (int index = 0; index < numOfShips; index++) {
+					controller.createEnemyShip();
+				}
+				for (Ship ship : controller.getGameMap().getmActiveShips()) {
+					((EnemyShip)ship).fireWeapon();
+					((EnemyShip)ship).fireWeapon();
+				}
+				for (int index = 0; index < maxNumOfTurns; index++) {
+					controller.onTurn();
+				}
+				for (Ship ship : controller.getGameMap().getmActiveShips()) {
+					if (!ship.isDestroyed()) {
+						GameController.destroyGame();
+						return false;
+					}
+				}
+				GameController.destroyGame();
+				return true;
+			}
+		}
+		
+		protected static class MixedTest extends TestCase {
+			
+			public MixedTest(int maxNumOfTurns, int numOfShips) {
+				super (maxNumOfTurns, numOfShips);
+				this.name = "MixedTest";
+			}
+
+			@Override
+			public Boolean call() throws Exception {
+				GameController controller = GameController.getInstance();
+				Random rand = new Random(new Date().getTime());
+				for (int index = 0; index < (numOfShips/2); index++) {
+					controller.createEnemyShip();
+					controller.createSubmarine();
+				}
+				for (Ship ship : controller.getGameMap().getmActiveShips()) {
+					ship.setDestination(new Position(rand.nextInt(controller.getGameMap().xSize), rand.nextInt(controller.getGameMap().ySize)));
+					if (ship.getClass().equals(EnemyShip.class)) {
+						((EnemyShip)ship).fireWeapon();
+					} else if (ship.getClass().equals(Submarine.class)) {
+						((Submarine)ship).fireTorpedo(new Position(rand.nextInt(controller.getGameMap().xSize), rand.nextInt(controller.getGameMap().ySize)));
+					}
+				}
+				for (int index = 0; index < maxNumOfTurns; index++) {
+					controller.onTurn();
+				}
+				GameController.destroyGame();
+				return true;
+			}
 		}
 	}
-	
-	private boolean subTorpedoTest (int numOfTurns) {
-		
-		return false;
-	}
-	
 	
 }
 
