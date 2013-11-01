@@ -54,7 +54,6 @@ public class GameMap implements ObjectListener {
 		this.weaponOnTurn();
 		this.shipOnTurn();
 		this.eventActions();
-		this.drawObjects();
 		this.purgeSets();
 	}
 
@@ -86,7 +85,7 @@ public class GameMap implements ObjectListener {
 		}
 	}
 	
-	private void drawObjects() {
+	protected void drawMap() {
 		for (Ship ship : this.getmActiveShips()) {
 			ship.onDraw();
 		}

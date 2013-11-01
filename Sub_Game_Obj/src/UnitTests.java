@@ -11,14 +11,14 @@ import com.example.SubGameObj.Entity.Submarine;
 import com.example.SubGameObj.Utils.Position;
 import com.example.SubGameObj.Weapon.Torpedo;
 
-public class TestCases {
+public class UnitTests {
 	
 	public static void main(String... args) {
 		try {
-			new TestCases.TestCase.shipMoveTest(100, 100).runTest();
-			new TestCases.TestCase.subTorpedoTest(100, 100).runTest();
-			new TestCases.TestCase.EnemyShipDepthChargeTest(100, 100).runTest();
-			new TestCases.TestCase.MixedTest(10000, 10000).runTest();
+			new UnitTests.TestCase.shipMoveTest(100, 100).runTest();
+			new UnitTests.TestCase.subTorpedoTest(100, 100).runTest();
+			new UnitTests.TestCase.EnemyShipDepthChargeTest(100, 100).runTest();
+			new UnitTests.TestCase.MixedTest(10000, 10000).runTest();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

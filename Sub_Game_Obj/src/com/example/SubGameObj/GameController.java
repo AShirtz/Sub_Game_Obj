@@ -69,6 +69,10 @@ public class GameController {
 		new EnemyShip(xPos, yPos);
 	}
 	
+	public void drawGame () {
+		this.gameMap.drawMap();
+	}
+	
 	public static void destroyGame () {
 		instance = null;
 		GameMap.destroyGame();
