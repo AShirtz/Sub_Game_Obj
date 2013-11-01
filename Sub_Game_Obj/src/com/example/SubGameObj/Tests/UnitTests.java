@@ -1,3 +1,4 @@
+package com.example.SubGameObj.Tests;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,12 +14,22 @@ import com.example.SubGameObj.Weapon.Torpedo;
 
 public class UnitTests {
 	
+	private static final int defaultNumTests = 50;
+	
 	public static void main(String... args) {
+		runTests(defaultNumTests);
+	}
+	
+	public static void runTests () {
+		runTests(defaultNumTests);
+	}
+	
+	public static void runTests (int numOfTests) {
 		try {
-			new UnitTests.TestCase.shipMoveTest(100, 100).runTest();
-			new UnitTests.TestCase.subTorpedoTest(100, 100).runTest();
-			new UnitTests.TestCase.EnemyShipDepthChargeTest(100, 100).runTest();
-			new UnitTests.TestCase.MixedTest(10000, 10000).runTest();
+			new UnitTests.TestCase.shipMoveTest(numOfTests, numOfTests).runTest();
+			new UnitTests.TestCase.subTorpedoTest(numOfTests, numOfTests).runTest();
+			new UnitTests.TestCase.EnemyShipDepthChargeTest(numOfTests, numOfTests).runTest();
+			new UnitTests.TestCase.MixedTest(numOfTests, numOfTests).runTest();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
