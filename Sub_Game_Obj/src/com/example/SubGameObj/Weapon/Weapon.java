@@ -1,6 +1,7 @@
 package com.example.SubGameObj.Weapon;
 
 import com.example.SubGameObj.GameMap;
+import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Event.Explosion;
 import com.example.SubGameObj.Utils.ObjectController;
 import com.example.SubGameObj.Utils.ObjectListener;
@@ -10,10 +11,12 @@ public abstract class Weapon implements ObjectController {
 
 	private Position mPosition = null;
 	protected ObjectListener listener = null;
+	private Ship creatorShip = null;
 	
-	public Weapon() {
+	public Weapon(Ship creatorShip) {
 		this.listener = GameMap.getInstance();
 		this.listener.createWeapon(this);
+		this.creatorShip = creatorShip;
 	}
 
 	public Position getPosition() {
@@ -27,7 +30,7 @@ public abstract class Weapon implements ObjectController {
 	public abstract void onTurn ();
 	
 	public void detonate () {
-		new Explosion(this.getPosition());
+		new Explosion(this.getPosition(), creatorShip);
 		this.listener.removeWeapon(this);
 	}
 }

@@ -10,8 +10,8 @@ import com.example.SubGameObj.Utils.Position;
  */
 public class Sound extends Event {
 
-	public Sound(Position pos) {
-		super(pos);
+	public Sound(Position pos, Ship creatorShip) {
+		super(pos, creatorShip);
 	}
 	
 	@Override

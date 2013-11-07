@@ -14,7 +14,7 @@ import com.example.SubGameObj.Weapon.Torpedo;
 
 public class UnitTests {
 	
-	private static final int defaultNumTests = 50;
+	private static final int defaultNumTests = 1;
 	
 	public static void main(String... args) {
 		runTests(defaultNumTests);

@@ -13,9 +13,9 @@ public class Explosion extends Event {
 	
 	private int damage = 10;
 	
-	public Explosion(Position pos) {
-		super(pos);
-		new Sound(pos);
+	public Explosion(Position pos, Ship creatorShip) {
+		super(pos, creatorShip);
+		new Sound(pos, creatorShip);
 	}
 	
 	/**

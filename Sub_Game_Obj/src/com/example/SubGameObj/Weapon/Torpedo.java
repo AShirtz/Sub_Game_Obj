@@ -1,13 +1,14 @@
 package com.example.SubGameObj.Weapon;
 
+import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Utils.Position;
 
 public class Torpedo extends Weapon {
 
 	private Position destination = null;
 	
-	public Torpedo (Position pos, Position dest) {
-		super();
+	public Torpedo (Position pos, Position dest, Ship creatorShip) {
+		super(creatorShip);
 		this.setPosition(pos);
 		this.destination = dest;
 	}

@@ -1,7 +1,6 @@
 package com.example.SubGameObj.Entity;
 
 import com.example.SubGameObj.GameMap;
-import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Utils.Health;
 import com.example.SubGameObj.Utils.ObjectListener;
 import com.example.SubGameObj.Utils.Position;

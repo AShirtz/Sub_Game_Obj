@@ -14,7 +14,7 @@ public class EnemyShip extends Ship {
 	}
 	
 	public Weapon fireWeapon() {
-		return new DepthCharge(this.getPosition().clone(), 10); 	//TODO: this is for simple testing purposes, the second int is the timer.
+		return new DepthCharge(this.getPosition().clone(), 10, this); 	//TODO: this is for simple testing purposes, the second int is the timer.
 	}
 
 	@Override

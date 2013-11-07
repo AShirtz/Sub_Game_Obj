@@ -13,14 +13,16 @@ public abstract class Event implements ObjectController {
 	
 	private Position mPosition = null;
 	private int radius;
+	private Ship creatorShip = null;
 	
 	private ObjectListener listener = null;
 	
-	public Event (Position pos) {
+	public Event (Position pos, Ship creatorShip) {
 		this.setPosition(pos);
 		this.setRadius(defaultRadius);
 		this.listener = GameMap.getInstance();
 		this.listener.createEvent(this);
+		this.creatorShip = creatorShip;
 	}
 
 	public Position getPosition() {
@@ -36,7 +38,7 @@ public abstract class Event implements ObjectController {
 	 * @author anshirtz
 	 */
 	public void eventAction (Ship ship) {
-		if (this.radius < this.getPosition().distanceToPos(ship.getPosition())) {
+		if (ship == this.creatorShip && this.radius < this.getPosition().distanceToPos(ship.getPosition())) {
 			return;		//This return statement is to stop the event from acting upon ships outside it's radius
 		}
 	}

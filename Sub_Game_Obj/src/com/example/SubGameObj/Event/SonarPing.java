@@ -12,9 +12,9 @@ public class SonarPing extends Event {
 	
 	private Ship shipWhoCreatedPing = null;
 
-	public SonarPing(Position pos) {
-		super(pos);
-		new Sound(pos);
+	public SonarPing(Position pos, Ship creatorShip) {
+		super(pos, creatorShip);
+		new Sound(pos, creatorShip);
 	}
 
 	/**
