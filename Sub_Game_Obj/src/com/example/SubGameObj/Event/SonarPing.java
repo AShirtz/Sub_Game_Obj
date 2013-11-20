@@ -10,7 +10,6 @@ import com.example.SubGameObj.Utils.Position;
  */
 public class SonarPing extends Event {
 	
-	private Ship shipWhoCreatedPing = null;
 
 	public SonarPing(Position pos, Ship creatorShip) {
 		super(pos, creatorShip);
@@ -18,14 +17,15 @@ public class SonarPing extends Event {
 	}
 
 	/**
-	 * This method will return the position of the ship that is responding to this event.
+	 * This method notifies the ship that was 'hit' with the sonar ping and creates a Sound object as though the ship
+	 * that was 'hit' created it. This allows the ship that created the SonarPing to react to the Sound.
 	 * @param Ship - the ship that is responding to the event.
 	 * @author anshirtz
 	 */
 	@Override
 	public void eventAction (Ship ship) {
 		super.eventAction(ship);
-		shipWhoCreatedPing.notifyOfPosition(ship.getPosition());		
+		new Sound(ship.getPosition(), ship);
 	}
 
 	@Override

@@ -13,7 +13,7 @@ public abstract class Event implements ObjectController {
 	
 	private Position mPosition = null;
 	private int radius;
-	private Ship creatorShip = null;
+	protected Ship creatorShip = null;
 	
 	private ObjectListener listener = null;
 	
@@ -39,6 +39,7 @@ public abstract class Event implements ObjectController {
 	 */
 	public void eventAction (Ship ship) {
 		if (ship == this.creatorShip && this.radius < this.getPosition().distanceToPos(ship.getPosition())) {
+			ship.notifyOfEvent(this);
 			return;		//This return statement is to stop the event from acting upon ships outside it's radius
 		}
 	}

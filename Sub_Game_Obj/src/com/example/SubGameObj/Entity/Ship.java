@@ -1,12 +1,12 @@
 package com.example.SubGameObj.Entity;
 
 import com.example.SubGameObj.GameMap;
+import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Utils.Health;
 import com.example.SubGameObj.Utils.ObjectListener;
 import com.example.SubGameObj.Utils.Position;
-import com.example.SubGameObj.Utils.ShipController;
 
-public abstract class Ship implements ShipController {
+public abstract class Ship {
 
 	private Position mPosition = null;
 	private Health mHealth = null;
@@ -26,18 +26,13 @@ public abstract class Ship implements ShipController {
 		}
 	}
 	
-	
 	/**
-	 * This method is a hook for the AI to know of a specific position on the map.
-	 * @param pos
-	 */
-	public void notifyOfPosition (Position pos) {}
-	
-	/**
-	 * Determines whether or not the ship should react to the event, as determined by the distance between the event and the ship.
+	 * This method acts as a hook to notify the shipController of an event that is acting on the ship.
 	 * @param event
-	 * @return Object (Position if SonarPing, Health if Explosion) or null if distance is greater than the events radius
 	 */
+	public void notifyOfEvent (Event event) {
+		
+	}
 	
 	public void receiveDamage (int damage) {
 		this.getHealth().reduceHealth(damage);
@@ -50,27 +45,24 @@ public abstract class Ship implements ShipController {
 		return this.getHealth().isDestroyed();
 	}
 
-	@Override
+	public abstract void onDraw();
+	
 	public void setDestination(Position destination) {
 		this.mDestination = destination;
 	}
 
-	@Override
 	public void setHealth(Health health) {
 		this.mHealth = health;
 	}
 
-	@Override
 	public Health getHealth() {
 		return this.mHealth;
 	}
 
-	@Override
 	public void setPosition(Position pos) {
 		this.mPosition = pos;
 	}
 
-	@Override
 	public Position getPosition() {
 		return this.mPosition;
 	}
