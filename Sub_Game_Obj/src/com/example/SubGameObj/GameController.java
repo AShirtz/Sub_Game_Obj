@@ -5,24 +5,31 @@ import java.util.Date;
 import java.util.Random;
 
 import com.example.SubGameObj.Entity.EnemyShip;
+import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Entity.Submarine;
+import com.example.SubGameObj.Utils.Position;
 
-public class GameController {
+public class GameController<T extends EnemyShip, S extends Submarine> {
 	
 	private static GameController instance = null;
+	
+	private Class <T> mEnemyShipClass = null;
+	private Class <S> mSubClass = null;
 	
 	private GameMap gameMap = null;
 	private GamePointer pointer = null;
 	
-	public static GameController getInstance () {
+	public static GameController getInstance (Class<?> enemyClass, Class<?> subClass) {
 		if (instance == null) {
-			instance = new GameController();
+			instance = new GameController(enemyClass, subClass);
 		}
 		return instance;
 	}
 
-	private GameController () {
+	private GameController (Class<T> enemyClass, Class<S> subClass) {
 		this.gameMap = GameMap.getInstance();
+		this.mEnemyShipClass = enemyClass;
+		this.mSubClass = subClass;
 	}
 	
 	public GameMap getGameMap() {
@@ -53,8 +60,14 @@ public class GameController {
 		createSubmarine(xPos, yPos);
 	}
 	
-	public void createSubmarine (int x, int y) {
-		new Submarine(x, y);
+	public void createSubmarine (int xPos, int yPos) {
+		try {
+			mSubClass.newInstance().setPosition(new Position(xPos, yPos));
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void createEnemyShip() {
@@ -65,11 +78,17 @@ public class GameController {
 	}
 	
 	public void createEnemyShip(int xPos, int yPos) {
-		new EnemyShip(xPos, yPos);
+		try {
+			mEnemyShipClass.newInstance().setPosition(new Position(xPos, yPos));
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void drawGame () {
-		this.gameMap.drawMap();
+		this.gameMap.drawMap(null);
 	}
 	
 	public static void destroyGame () {

@@ -14,8 +14,16 @@ public abstract class Ship {
 	
 	private ObjectListener listener = null;
 	
+	public Ship () {
+		init();
+	}
+	
 	public Ship(int xPos, int yPos) {
 		this.setPosition(new Position(xPos, yPos));
+		init();
+	}
+	
+	private void init () {
 		this.listener = GameMap.getInstance();
 		this.listener.createShip(this);
 	}
@@ -45,7 +53,7 @@ public abstract class Ship {
 		return this.getHealth().isDestroyed();
 	}
 
-	public abstract void onDraw();
+	public abstract void onDraw(Object canvasObj);
 	
 	public void setDestination(Position destination) {
 		this.mDestination = destination;

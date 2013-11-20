@@ -63,7 +63,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance();
+				GameController controller = GameController.getInstance(EnemyShipTestImpl.class, SubmarineTestImpl.class);
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createEnemyShip();
@@ -97,7 +97,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance();
+				GameController controller = GameController.getInstance(EnemyShipTestImpl.class, SubmarineTestImpl.class);
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createSubmarine();
@@ -123,7 +123,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance();
+				GameController controller = GameController.getInstance(EnemyShipTestImpl.class, SubmarineTestImpl.class);
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createEnemyShip();
 				}
@@ -154,7 +154,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance();
+				GameController controller = GameController.getInstance(EnemyShipTestImpl.class, SubmarineTestImpl.class);
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < (numOfShips/2); index++) {
 					controller.createEnemyShip();

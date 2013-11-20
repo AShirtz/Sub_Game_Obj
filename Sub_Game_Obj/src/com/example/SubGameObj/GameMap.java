@@ -13,7 +13,8 @@ import com.example.SubGameObj.Weapon.Weapon;
 
 /**
  * This class represents the Map on which Ships and Events occur.
- * This is also the entry point for the onTurn method and holds the set of ships and events
+ * This is also the entry point for the onTurn method and holds the set of ships and events.
+ * Generic T holds the Object type that will be the canvas for drawing.
  * @author anshirtz
  *
  */
@@ -85,9 +86,9 @@ public class GameMap implements ObjectListener {
 		}
 	}
 	
-	protected void drawMap() {
+	protected void drawMap(Object canvasObj) {
 		for (Ship ship : this.getmActiveShips()) {
-			ship.onDraw();
+			ship.onDraw(canvasObj);
 		}
 		for (Weapon weapon : this.getmWeaponsActive()) {
 			weapon.onDraw();
