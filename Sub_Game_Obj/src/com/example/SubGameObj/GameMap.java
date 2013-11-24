@@ -86,15 +86,15 @@ public class GameMap implements ObjectListener {
 		}
 	}
 	
-	protected void drawMap(Object canvasObj) {
+	protected void drawMap(ObjectDrawer objectDrawer) {
 		for (Ship ship : this.getmActiveShips()) {
-			ship.onDraw(canvasObj);
+			ship.onDraw(objectDrawer);
 		}
 		for (Weapon weapon : this.getmWeaponsActive()) {
-			weapon.onDraw();
+			weapon.onDraw(objectDrawer);
 		}
 		for (Event event : this.getmCurrentEvents()) {
-			event.onDraw();
+			event.onDraw(objectDrawer);
 		}
 	}
 	

@@ -66,4 +66,13 @@ public class Position implements Cloneable {
 	public void setY(int posY) {
 		this.posY = posY;
 	}
+	
+	@Override
+	public String toString() {
+		String result = "";
+		result += this.posX;
+		result += ", ";
+		result += this.posY;
+		return result;
+	}
 }

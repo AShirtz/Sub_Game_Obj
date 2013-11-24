@@ -1,6 +1,7 @@
 package com.example.SubGameObj.Entity;
 
 import com.example.SubGameObj.GameMap;
+import com.example.SubGameObj.ObjectDrawer;
 import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Utils.Health;
 import com.example.SubGameObj.Utils.ObjectListener;
@@ -53,7 +54,7 @@ public abstract class Ship {
 		return this.getHealth().isDestroyed();
 	}
 
-	public abstract void onDraw(Object canvasObj);
+	public abstract void onDraw(ObjectDrawer objectDrawer);
 	
 	public void setDestination(Position destination) {
 		this.mDestination = destination;

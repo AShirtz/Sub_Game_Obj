@@ -1,5 +1,5 @@
 package com.example.SubGameObj.Utils;
 
 public interface ObjectController {
-	public void onDraw();
+	public void onDraw(Object canvasObj);
 }

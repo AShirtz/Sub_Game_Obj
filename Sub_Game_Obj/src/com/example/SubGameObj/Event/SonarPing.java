@@ -29,7 +29,7 @@ public class SonarPing extends Event {
 	}
 
 	@Override
-	public void onDraw() {
+	public void onDraw(Object canvasObj) {
 		// TODO Auto-generated method stub
 		
 	}

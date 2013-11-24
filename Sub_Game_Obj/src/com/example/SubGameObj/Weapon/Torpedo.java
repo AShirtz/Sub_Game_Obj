@@ -22,7 +22,7 @@ public class Torpedo extends Weapon {
 	}
 
 	@Override
-	public void onDraw() {
+	public void onDraw(Object canvasObj) {
 		
 	}
 	

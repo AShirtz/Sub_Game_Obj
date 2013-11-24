@@ -20,7 +20,7 @@ public class Sound extends Event {
 	}
 
 	@Override
-	public void onDraw() {
+	public void onDraw(Object canvasObj) {
 		
 	}
 }

@@ -9,27 +9,25 @@ import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Entity.Submarine;
 import com.example.SubGameObj.Utils.Position;
 
-public class GameController<T extends EnemyShip, S extends Submarine> {
+public class GameController {
 	
 	private static GameController instance = null;
 	
-	private Class <T> mEnemyShipClass = null;
-	private Class <S> mSubClass = null;
+	private ObjectDrawer mObjectDrawer = null;
 	
 	private GameMap gameMap = null;
 	private GamePointer pointer = null;
 	
-	public static GameController getInstance (Class<?> enemyClass, Class<?> subClass) {
+	public static GameController getInstance (ObjectDrawer objectDrawer) {
 		if (instance == null) {
-			instance = new GameController(enemyClass, subClass);
+			instance = new GameController(objectDrawer);
 		}
 		return instance;
 	}
 
-	private GameController (Class<T> enemyClass, Class<S> subClass) {
+	private GameController (ObjectDrawer objectDrawer) {
 		this.gameMap = GameMap.getInstance();
-		this.mEnemyShipClass = enemyClass;
-		this.mSubClass = subClass;
+		this.mObjectDrawer = objectDrawer;
 	}
 	
 	public GameMap getGameMap() {
@@ -61,13 +59,7 @@ public class GameController<T extends EnemyShip, S extends Submarine> {
 	}
 	
 	public void createSubmarine (int xPos, int yPos) {
-		try {
-			mSubClass.newInstance().setPosition(new Position(xPos, yPos));
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		new Submarine().setPosition(new Position(xPos, yPos));
 	}
 	
 	public void createEnemyShip() {
@@ -78,17 +70,13 @@ public class GameController<T extends EnemyShip, S extends Submarine> {
 	}
 	
 	public void createEnemyShip(int xPos, int yPos) {
-		try {
-			mEnemyShipClass.newInstance().setPosition(new Position(xPos, yPos));
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		new EnemyShip().setPosition(new Position(xPos, yPos));
 	}
 	
 	public void drawGame () {
-		this.gameMap.drawMap(null);
+		mObjectDrawer.prepareDrawer();
+		this.gameMap.drawMap(mObjectDrawer);
+		mObjectDrawer.postChanges();
 	}
 	
 	public static void destroyGame () {

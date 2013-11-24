@@ -21,7 +21,7 @@ public class DepthCharge extends Weapon {
 	}
 
 	@Override
-	public void onDraw() {
+	public void onDraw(Object canvasObj) {
 		
 	}
 }

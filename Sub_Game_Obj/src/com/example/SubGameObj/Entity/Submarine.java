@@ -1,10 +1,11 @@
 package com.example.SubGameObj.Entity;
 
+import com.example.SubGameObj.ObjectDrawer;
 import com.example.SubGameObj.Utils.Health;
 import com.example.SubGameObj.Utils.Position;
 import com.example.SubGameObj.Weapon.Torpedo;
 
-public abstract class Submarine extends Ship {
+public class Submarine extends Ship {
 
 	private static final int submarineDefaultHealth = 100;
 	
@@ -20,6 +21,11 @@ public abstract class Submarine extends Ship {
 	
 	public void fireTorpedo (Position destination) {
 		new Torpedo(this.getPosition().clone(), destination, this);
+	}
+
+	@Override
+	public void onDraw(ObjectDrawer objectDrawer) {
+		objectDrawer.drawSubmarine(this.getPosition());
 	}
 
 }

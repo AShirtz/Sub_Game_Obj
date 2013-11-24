@@ -14,7 +14,7 @@ import com.example.SubGameObj.Weapon.Torpedo;
 
 public class UnitTests {
 	
-	private static final int defaultNumTests = 50;
+	private static final int defaultNumTests = 10;
 	
 	public static void main(String... args) {
 		runTests(defaultNumTests);
@@ -26,10 +26,11 @@ public class UnitTests {
 	
 	public static void runTests (int numOfTests) {
 		try {
-			new UnitTests.TestCase.shipMoveTest(numOfTests, numOfTests).runTest();
-			new UnitTests.TestCase.subTorpedoTest(numOfTests, numOfTests).runTest();
-			new UnitTests.TestCase.EnemyShipDepthChargeTest(numOfTests, numOfTests).runTest();
-			new UnitTests.TestCase.MixedTest(numOfTests, numOfTests).runTest();
+			//new UnitTests.TestCase.shipMoveTest(numOfTests, numOfTests).runTest();
+			//new UnitTests.TestCase.subTorpedoTest(numOfTests, numOfTests).runTest();
+			//new UnitTests.TestCase.EnemyShipDepthChargeTest(numOfTests, numOfTests).runTest();
+			//new UnitTests.TestCase.MixedTest(numOfTests, numOfTests).runTest();
+			new UnitTests.TestCase.DrawTest(numOfTests, numOfTests).runTest();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -63,7 +64,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(EnemyShipTestImpl.class, SubmarineTestImpl.class);
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createEnemyShip();
@@ -97,7 +98,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(EnemyShipTestImpl.class, SubmarineTestImpl.class);
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createSubmarine();
@@ -123,7 +124,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(EnemyShipTestImpl.class, SubmarineTestImpl.class);
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createEnemyShip();
 				}
@@ -154,7 +155,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(EnemyShipTestImpl.class, SubmarineTestImpl.class);
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < (numOfShips/2); index++) {
 					controller.createEnemyShip();
@@ -170,6 +171,38 @@ public class UnitTests {
 				}
 				for (int index = 0; index < maxNumOfTurns; index++) {
 					controller.onTurn();
+				}
+				GameController.destroyGame();
+				return true;
+			}
+		}
+		
+		protected static class DrawTest extends TestCase {
+			
+			public DrawTest(int maxNumOfTurns, int numOfShips) {
+				super (maxNumOfTurns, numOfShips);
+				this.name = "MixedTest";
+			}
+
+			@Override
+			public Boolean call() throws Exception {
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
+				Random rand = new Random(new Date().getTime());
+				for (int index = 0; index < (numOfShips/2); index++) {
+					controller.createEnemyShip();
+					controller.createSubmarine();
+				}
+				for (Ship ship : controller.getGameMap().getmActiveShips()) {
+					ship.setDestination(new Position(rand.nextInt(controller.getGameMap().xSize), rand.nextInt(controller.getGameMap().ySize)));
+					if (ship.getClass().equals(EnemyShip.class)) {
+						((EnemyShip)ship).fireWeapon();
+					} else if (ship.getClass().equals(Submarine.class)) {
+						((Submarine)ship).fireTorpedo(new Position(rand.nextInt(controller.getGameMap().xSize), rand.nextInt(controller.getGameMap().ySize)));
+					}
+				}
+				for (int index = 0; index < maxNumOfTurns; index++) {
+					controller.onTurn();
+					controller.drawGame();
 				}
 				GameController.destroyGame();
 				return true;
