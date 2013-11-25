@@ -13,6 +13,8 @@ public abstract class ObjectDrawer {
 	
 	public abstract void postChanges();
 	
+	public abstract void drawMap();
+	
 	public abstract void drawSubmarine (Position pos);
 	
 	public abstract void drawEnemyShip (Position pos);

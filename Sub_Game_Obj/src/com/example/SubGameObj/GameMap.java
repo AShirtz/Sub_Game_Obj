@@ -87,6 +87,7 @@ public class GameMap implements ObjectListener {
 	}
 	
 	protected void drawMap(ObjectDrawer objectDrawer) {
+		objectDrawer.drawMap();
 		for (Ship ship : this.getmActiveShips()) {
 			ship.onDraw(objectDrawer);
 		}

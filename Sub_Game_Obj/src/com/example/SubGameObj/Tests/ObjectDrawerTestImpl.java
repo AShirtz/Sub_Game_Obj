@@ -49,6 +49,12 @@ public class ObjectDrawerTestImpl extends ObjectDrawer {
 	public void drawSonarPing(Position pos) {
 		System.out.print("drawSonarPing: " + pos.toString() + "\n");
 	}
+
+	@Override
+	public void drawMap() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
