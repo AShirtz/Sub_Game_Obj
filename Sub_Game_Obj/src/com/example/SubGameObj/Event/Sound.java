@@ -1,5 +1,6 @@
 package com.example.SubGameObj.Event;
 
+import com.example.SubGameObj.ObjectDrawer;
 import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Utils.Position;
 
@@ -20,7 +21,7 @@ public class Sound extends Event {
 	}
 
 	@Override
-	public void onDraw(Object canvasObj) {
-		
+	public void onDraw(ObjectDrawer canvasObj) {
+		canvasObj.drawSound(this.getPosition());
 	}
 }

@@ -31,7 +31,7 @@ public abstract class Ship {
 	
 	public void onTurn () {
 		if (this.mDestination != null && !this.mPosition.equals(mDestination)) {
-			this.getPosition().moveToward(this.mDestination, 30);	//TODO: the '30' is the speed at which the ship will move
+			this.getPosition().moveToward(this.mDestination, 5);	//TODO: the '5' is the speed at which the ship will move
 		}
 	}
 	

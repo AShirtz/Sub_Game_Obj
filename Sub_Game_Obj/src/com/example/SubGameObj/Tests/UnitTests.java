@@ -64,7 +64,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl(), 1000, 1000);
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createEnemyShip();
@@ -98,7 +98,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl(), 1000, 1000);
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createSubmarine();
@@ -124,7 +124,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl(), 1000, 1000);
 				for (int index = 0; index < numOfShips; index++) {
 					controller.createEnemyShip();
 				}
@@ -155,7 +155,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl(), 1000, 1000);
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < (numOfShips/2); index++) {
 					controller.createEnemyShip();
@@ -186,7 +186,7 @@ public class UnitTests {
 
 			@Override
 			public Boolean call() throws Exception {
-				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl());
+				GameController controller = GameController.getInstance(new ObjectDrawerTestImpl(), 1000, 1000);
 				Random rand = new Random(new Date().getTime());
 				for (int index = 0; index < (numOfShips/2); index++) {
 					controller.createEnemyShip();

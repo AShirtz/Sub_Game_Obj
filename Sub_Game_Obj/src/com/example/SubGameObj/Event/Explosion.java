@@ -1,5 +1,6 @@
 package com.example.SubGameObj.Event;
 
+import com.example.SubGameObj.ObjectDrawer;
 import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Utils.Health;
 import com.example.SubGameObj.Utils.Position;
@@ -30,8 +31,7 @@ public class Explosion extends Event {
 	}
 
 	@Override
-	public void onDraw(Object canvasObj) {
-		// TODO Auto-generated method stub
-		
+	public void onDraw(ObjectDrawer canvasObj) {
+		canvasObj.drawExplosion(this.getPosition());
 	}
 }

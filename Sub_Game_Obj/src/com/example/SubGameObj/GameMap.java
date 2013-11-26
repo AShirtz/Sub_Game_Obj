@@ -27,14 +27,18 @@ public class GameMap implements ObjectListener {
 	private Set <Ship> shipsToRemove = null;
 	private Set <Weapon> weaponsToRemove = null;
 	
-	public static final int xSize = 1000;
-	public static final int ySize = 1000;
+	public static int xSize = 1000;
+	public static int ySize = 1000;
 	
 	public static GameMap instance = null;
 	
-	public static GameMap getInstance() {
+	public static GameMap getInstance () {
+		return instance;
+	}
+	
+	public static GameMap createInstance(int width, int height) {
 		if (instance == null) {
-			instance = new GameMap();
+			instance = new GameMap(width, height);
 		}
 		return instance;
 	}
@@ -43,7 +47,9 @@ public class GameMap implements ObjectListener {
 		instance = null;
 	}
 	
-	private GameMap () {
+	private GameMap (int width, int height) {
+		GameMap.xSize = width;
+		GameMap.ySize = height;
 		this.mActiveShips = new HashSet<Ship>();
 		this.mCurrentEvents = new HashSet<Event>();
 		this.mWeaponsActive = new HashSet<Weapon>();
@@ -52,10 +58,10 @@ public class GameMap implements ObjectListener {
 	}
 	
 	protected void onTurn () {
+		this.purgeSets();
 		this.weaponOnTurn();
 		this.shipOnTurn();
 		this.eventActions();
-		this.purgeSets();
 	}
 
 	private void purgeSets() {

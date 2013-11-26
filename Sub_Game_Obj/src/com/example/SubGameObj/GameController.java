@@ -18,15 +18,15 @@ public class GameController {
 	private GameMap gameMap = null;
 	private GamePointer pointer = null;
 	
-	public static GameController getInstance (ObjectDrawer objectDrawer) {
+	public static GameController getInstance (ObjectDrawer objectDrawer, int width, int height) {
 		if (instance == null) {
-			instance = new GameController(objectDrawer);
+			instance = new GameController(objectDrawer, width, height);
 		}
 		return instance;
 	}
 
-	private GameController (ObjectDrawer objectDrawer) {
-		this.gameMap = GameMap.getInstance();
+	private GameController (ObjectDrawer objectDrawer, int width, int height) {
+		this.gameMap = GameMap.createInstance(width, height);
 		this.mObjectDrawer = objectDrawer;
 	}
 	
@@ -74,9 +74,13 @@ public class GameController {
 	}
 	
 	public void drawGame () {
-		mObjectDrawer.prepareDrawer();
-		this.gameMap.drawMap(mObjectDrawer);
-		mObjectDrawer.postChanges();
+		try {
+			mObjectDrawer.prepareDrawer();
+			this.gameMap.drawMap(mObjectDrawer);
+		} finally {
+			mObjectDrawer.postChanges();
+
+		}
 	}
 	
 	public static void destroyGame () {

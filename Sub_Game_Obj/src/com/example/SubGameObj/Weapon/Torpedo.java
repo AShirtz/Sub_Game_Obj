@@ -1,5 +1,6 @@
 package com.example.SubGameObj.Weapon;
 
+import com.example.SubGameObj.ObjectDrawer;
 import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Utils.Position;
 
@@ -22,8 +23,8 @@ public class Torpedo extends Weapon {
 	}
 
 	@Override
-	public void onDraw(Object canvasObj) {
-		
+	public void onDraw(ObjectDrawer canvasObj) {
+		canvasObj.drawTorpedo(this.getPosition());
 	}
 	
 }

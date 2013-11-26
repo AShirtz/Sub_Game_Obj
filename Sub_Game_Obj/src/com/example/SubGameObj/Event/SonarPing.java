@@ -1,5 +1,6 @@
 package com.example.SubGameObj.Event;
 
+import com.example.SubGameObj.ObjectDrawer;
 import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Utils.Position;
 
@@ -29,8 +30,7 @@ public class SonarPing extends Event {
 	}
 
 	@Override
-	public void onDraw(Object canvasObj) {
-		// TODO Auto-generated method stub
-		
+	public void onDraw(ObjectDrawer canvasObj) {
+		canvasObj.drawSonarPing(this.getPosition());
 	}
 }

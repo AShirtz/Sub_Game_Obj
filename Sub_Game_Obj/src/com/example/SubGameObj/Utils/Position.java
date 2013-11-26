@@ -1,5 +1,7 @@
 package com.example.SubGameObj.Utils;
 
+import com.example.SubGameObj.GameMap;
+
 public class Position implements Cloneable {
 
 	private int posX;
@@ -56,7 +58,11 @@ public class Position implements Cloneable {
 	}
 
 	public void setX(int posX) {
-		this.posX = posX;
+		if (posX > GameMap.xSize) {
+			this.posX = GameMap.xSize;
+		} else {
+			this.posX = posX;
+		}
 	}
 
 	public int getY() {
@@ -64,7 +70,11 @@ public class Position implements Cloneable {
 	}
 
 	public void setY(int posY) {
-		this.posY = posY;
+		if (posY > GameMap.ySize) {
+			this.posY = GameMap.ySize;
+		} else {
+			this.posY = posY;
+		}
 	}
 	
 	@Override
