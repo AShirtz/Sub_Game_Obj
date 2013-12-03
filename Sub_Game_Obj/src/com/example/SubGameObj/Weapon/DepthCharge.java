@@ -14,6 +14,10 @@ public class DepthCharge extends Weapon {
 		this.timeToDetonation = timeToDetonation;
 	}
 	
+	public int getTimeToDetonate () {
+		return this.timeToDetonation;
+	}
+	
 	@Override
 	public void onTurn () {
 		if (--this.timeToDetonation == 0) {
@@ -23,6 +27,6 @@ public class DepthCharge extends Weapon {
 
 	@Override
 	public void onDraw(ObjectDrawer canvasObj) {
-		canvasObj.drawDepthCharge(this.getPosition());
+		canvasObj.drawDepthCharge(this);
 	}
 }

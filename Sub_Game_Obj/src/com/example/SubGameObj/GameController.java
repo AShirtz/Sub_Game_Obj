@@ -1,11 +1,9 @@
 package com.example.SubGameObj;
 
-// This is Dan
 import java.util.Date;
 import java.util.Random;
 
 import com.example.SubGameObj.Entity.EnemyShip;
-import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Entity.Submarine;
 import com.example.SubGameObj.Utils.Position;
 
@@ -16,7 +14,7 @@ public class GameController {
 	private ObjectDrawer mObjectDrawer = null;
 	
 	private GameMap gameMap = null;
-	private GamePointer pointer = null;
+	private Submarine playerSub = null;
 	
 	public static GameController getInstance (ObjectDrawer objectDrawer, int width, int height) {
 		if (instance == null) {
@@ -34,21 +32,43 @@ public class GameController {
 		return gameMap;
 	}
 	
-	public void setpointer(GamePointer gamepointer){
-		if (pointer.getSelected() == null) {
-			//TODO: enter movement commands
+	public void setPointer(Position pos){
+		GamePointer gamePointer = new GamePointer();
+		gamePointer.setPosition(pos);
+		gamePointer.setSelected(this.gameMap.getShipAtPosition(pos));
+		if (gamePointer.getSelected() != null && gamePointer.getSelected().getClass().equals(EnemyShip.class)) {
+			this.playerSub.fireTorpedo(gamePointer.getSelected().getPosition());
 		} 
 		else {
-			pointer = gamepointer;
+			this.playerSub.setDestination(gamePointer.getPosition());
 		} 
-	} 
+	}
+	
+	public void createPlayerSub () {
+		this.playerSub = new Submarine();
+		this.playerSub.setPosition(new Position(this.gameMap.xSize /2, this.gameMap.ySize /2));
+	}
+	
+	public Submarine getPlayerSub () {
+		return this.playerSub;
+	}
 
 	public void setGameMap(GameMap gameMap) {
 		this.gameMap = gameMap;
 	}
 
 	public void onTurn() {
+		this.createEnemies();
 		this.gameMap.onTurn();
+	}
+	
+	private void createEnemies() {
+		if (this.gameMap.getmActiveShips().size() <= 6) {	//This means that there will be 5 EnemyShips and the 1 playerSub
+			Random rand = new Random(new Date().getTime());
+			for (int n = rand.nextInt(7); n > 0; n--) {
+				this.createEnemyShip();
+			}
+		}
 	}
 	
 	public void createSubmarine () {

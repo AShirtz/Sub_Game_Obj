@@ -17,7 +17,9 @@ public class Sound extends Event {
 	
 	@Override
 	public void eventAction (Ship ship) {
-		super.eventAction(ship);
+		if (this.shouldAffectShip(ship)) {
+			ship.notifyOfEvent(this);
+		}
 	}
 
 	@Override

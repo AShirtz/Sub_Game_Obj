@@ -1,53 +1,25 @@
 package com.example.SubGameObj.Tests;
 
 import com.example.SubGameObj.ObjectDrawer;
+import com.example.SubGameObj.Entity.EnemyShip;
+import com.example.SubGameObj.Entity.Submarine;
+import com.example.SubGameObj.Event.Explosion;
 import com.example.SubGameObj.Utils.Position;
+import com.example.SubGameObj.Weapon.DepthCharge;
+import com.example.SubGameObj.Weapon.Torpedo;
 
 public class ObjectDrawerTestImpl extends ObjectDrawer {
 
 	@Override
 	public void prepareDrawer() {
-		System.out.print("prepareDrawer\n");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void postChanges() {
-		System.out.print("postChanges\n");
-	}
-
-	@Override
-	public void drawSubmarine(Position pos) {
-		System.out.print("drawSubmarine: " + pos.toString() + "\n");
-	}
-
-	@Override
-	public void drawEnemyShip(Position pos) {
-		System.out.print("drawEnemyShip: " + pos.toString() + "\n");
-	}
-
-	@Override
-	public void drawTorpedo(Position pos) {
-		System.out.print("drawTorpedo: " + pos.toString() + "\n");
-	}
-
-	@Override
-	public void drawDepthCharge(Position pos) {
-		System.out.print("drawDepthCharge: " + pos.toString() + "\n");
-	}
-
-	@Override
-	public void drawExplosion(Position pos) {
-		System.out.print("drawExplosion: " + pos.toString() + "\n");
-	}
-
-	@Override
-	public void drawSound(Position pos) {
-		System.out.print("drawSound: " + pos.toString() + "\n");
-	}
-
-	@Override
-	public void drawSonarPing(Position pos) {
-		System.out.print("drawSonarPing: " + pos.toString() + "\n");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -55,6 +27,48 @@ public class ObjectDrawerTestImpl extends ObjectDrawer {
 		// TODO Auto-generated method stub
 		
 	}
-	
+
+	@Override
+	public void drawSubmarine(Submarine sub) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawEnemyShip(EnemyShip ship) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawTorpedo(Torpedo torpedo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawDepthCharge(DepthCharge depthCharge) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawExplosion(Explosion expolsion) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawSound(Position pos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawSonarPing(Position pos) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

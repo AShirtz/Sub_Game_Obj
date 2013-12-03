@@ -25,8 +25,10 @@ public class SonarPing extends Event {
 	 */
 	@Override
 	public void eventAction (Ship ship) {
-		super.eventAction(ship);
-		new Sound(ship.getPosition(), ship);
+		if (this.shouldAffectShip(ship)) {
+			ship.notifyOfEvent(this);
+			new Sound(ship.getPosition(), ship);
+		}
 	}
 
 	@Override

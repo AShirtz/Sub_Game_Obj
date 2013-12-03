@@ -8,6 +8,7 @@ import com.example.SubGameObj.Entity.EnemyShip;
 import com.example.SubGameObj.Entity.Ship;
 import com.example.SubGameObj.Event.Event;
 import com.example.SubGameObj.Utils.ObjectListener;
+import com.example.SubGameObj.Utils.Position;
 import com.example.SubGameObj.Weapon.Weapon;
 
 
@@ -27,8 +28,8 @@ public class GameMap implements ObjectListener {
 	private Set <Ship> shipsToRemove = null;
 	private Set <Weapon> weaponsToRemove = null;
 	
-	public static int xSize = 1000;
-	public static int ySize = 1000;
+	public static int xSize = 0;
+	public static int ySize = 0;
 	
 	public static GameMap instance = null;
 	
@@ -58,10 +59,12 @@ public class GameMap implements ObjectListener {
 	}
 	
 	protected void onTurn () {
-		this.purgeSets();
-		this.weaponOnTurn();
-		this.shipOnTurn();
-		this.eventActions();
+		synchronized (this) {
+			this.purgeSets();
+			this.weaponOnTurn();
+			this.shipOnTurn();
+			this.eventActions();
+		}
 	}
 
 	private void purgeSets() {
@@ -105,6 +108,16 @@ public class GameMap implements ObjectListener {
 		}
 	}
 	
+	public Ship getShipAtPosition (Position pos) {
+		Ship result = null;
+		for (Ship ship : this.mActiveShips) {
+			if (ship.getPosition().distanceToPos(pos) <= 10) {
+				result = ship;
+			}
+		}
+		return result;
+	}
+	
 	/*
 	 *********************
 	 * Getters & Setters *
@@ -143,34 +156,37 @@ public class GameMap implements ObjectListener {
 	
 	@Override
 	public void createShip(Ship ship) {
-		this.mActiveShips.add(ship);
+		synchronized (this) {
+			this.mActiveShips.add(ship);
+		}
 	}
 	
 	@Override
 	public void removeShip(Ship ship) {
-		this.shipsToRemove.add(ship);
+		synchronized (this) {
+			this.shipsToRemove.add(ship);
+		}
 	}
 
 	@Override
 	public void createEvent(Event event) {
-		this.mCurrentEvents.add(event);
-	}
-
-	@Override
-	public void removeEvent(Event event) {
-		if (this.mCurrentEvents.contains(event)) {
-			this.mCurrentEvents.remove(event);
+		synchronized (this) {
+			this.mCurrentEvents.add(event);
 		}
 	}
 
 	@Override
 	public void createWeapon(Weapon weapon) {
-		this.mWeaponsActive.add(weapon);
+		synchronized (this) {
+			this.mWeaponsActive.add(weapon);
+		}
 	}
 
 	@Override
 	public void removeWeapon(Weapon weapon) {
-		this.weaponsToRemove.add(weapon);
+		synchronized (this) {
+			this.weaponsToRemove.add(weapon);
+		}
 	}
 
 }

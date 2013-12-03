@@ -26,12 +26,14 @@ public class Explosion extends Event {
 	 */
 	@Override
 	public void eventAction (Ship ship) {
-		super.eventAction(ship);
-		ship.receiveDamage(this.damage);
+		if (this.shouldAffectShip(ship)) {
+			ship.notifyOfEvent(this);
+			ship.receiveDamage(this.damage);
+		}
 	}
 
 	@Override
 	public void onDraw(ObjectDrawer canvasObj) {
-		canvasObj.drawExplosion(this.getPosition());
+		canvasObj.drawExplosion(this);
 	}
 }

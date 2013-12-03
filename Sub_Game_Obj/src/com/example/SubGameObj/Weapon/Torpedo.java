@@ -24,7 +24,7 @@ public class Torpedo extends Weapon {
 
 	@Override
 	public void onDraw(ObjectDrawer canvasObj) {
-		canvasObj.drawTorpedo(this.getPosition());
+		canvasObj.drawTorpedo(this);
 	}
 	
 }

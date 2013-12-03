@@ -37,11 +37,14 @@ public abstract class Event implements ObjectController {
 	 * @param Ship - The ship responding to the Event.
 	 * @author anshirtz
 	 */
-	public void eventAction (Ship ship) {
-		if (ship == this.creatorShip && this.radius < this.getPosition().distanceToPos(ship.getPosition())) {
+	public abstract void eventAction (Ship ship);
+	
+	public boolean shouldAffectShip (Ship ship) {
+		if (ship != this.creatorShip && this.radius > this.getPosition().distanceToPos(ship.getPosition())) {
 			ship.notifyOfEvent(this);
-			return;		//This return statement is to stop the event from acting upon ships outside it's radius
+			return true;
 		}
+		return false;
 	}
 
 	public int getRadius() {

@@ -25,7 +25,7 @@ public class Submarine extends Ship {
 
 	@Override
 	public void onDraw(ObjectDrawer objectDrawer) {
-		objectDrawer.drawSubmarine(this.getPosition());
+		objectDrawer.drawSubmarine(this);
 	}
 
 }
