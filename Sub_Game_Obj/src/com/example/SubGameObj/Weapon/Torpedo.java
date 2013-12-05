@@ -16,7 +16,7 @@ public class Torpedo extends Weapon {
 
 	@Override
 	public void onTurn() {
-		this.getPosition().moveToward(destination, 30);		//TODO: the '30' is speed, just for testing
+		this.getPosition().moveToward(destination, 5);		//TODO: the '5' is speed, just for testing
 		if (this.getPosition().equals(destination)) {
 			this.detonate();
 		}

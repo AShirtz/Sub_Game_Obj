@@ -111,7 +111,7 @@ public class GameMap implements ObjectListener {
 	public Ship getShipAtPosition (Position pos) {
 		Ship result = null;
 		for (Ship ship : this.mActiveShips) {
-			if (ship.getPosition().distanceToPos(pos) <= 10) {
+			if (ship.getPosition().distanceToPos(pos) <= 20) {
 				result = ship;
 			}
 		}

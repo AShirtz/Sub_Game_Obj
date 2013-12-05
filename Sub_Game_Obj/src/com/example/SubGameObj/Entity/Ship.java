@@ -9,9 +9,9 @@ import com.example.SubGameObj.Utils.Position;
 
 public abstract class Ship {
 
-	private Position mPosition = null;
-	private Health mHealth = null;
-	private Position mDestination = null;
+	protected Position mPosition = null;
+	protected Health mHealth = null;
+	protected Position mDestination = null;
 	
 	private ObjectListener listener = null;
 	
@@ -30,8 +30,12 @@ public abstract class Ship {
 	}
 	
 	public void onTurn () {
+		this.moveToDestination();
+	}
+	
+	public void moveToDestination() {
 		if (this.mDestination != null && !this.mPosition.equals(mDestination)) {
-			this.getPosition().moveToward(this.mDestination, 5);	//TODO: the '5' is the speed at which the ship will move
+			this.getPosition().moveToward(this.mDestination, 2);	//TODO: the '2' is the speed at which the ship will move
 		}
 	}
 	
